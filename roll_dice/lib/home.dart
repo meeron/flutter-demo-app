@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:roll_dice/dice.dart';
 import 'package:roll_dice/gradient_decoration.dart';
-import 'package:roll_dice/home_text.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,25 +10,10 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: GradientDecoration(Colors.deepPurple, Colors.purple),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(
-                'assets/images/dice-1.png',
-                width: 200,
-              ),
-              const SizedBox(height: 20),
-              TextButton(
-                onPressed: rollDice,
-                child: const HomeText('Roll dice'),
-              )
-            ],
-          ),
+        child: const Center(
+          child: Dice(),
         ),
       ),
     );
   }
-
-  rollDice() {}
 }
