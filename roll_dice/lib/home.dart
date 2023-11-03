@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:roll_dice/gradient_decoration.dart';
+import 'package:roll_dice/home_text.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -7,21 +9,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.deepPurple, Colors.purple],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        decoration: GradientDecoration(Colors.deepPurple, Colors.purple),
         child: const Center(
-          child: Text(
-            'Hello from home',
-            style: TextStyle(
-              color: Color.fromRGBO(252, 237, 217, 1),
-              fontSize: 28,
-            ),
-          ),
+          child: HomeText('Hello from home'),
         ),
       ),
     );
