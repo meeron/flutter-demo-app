@@ -11,22 +11,24 @@ class Start extends StatelessWidget {
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 300,
+          color: const Color.fromARGB(150, 255, 255, 255),
         ),
-        const SizedBox(height: 50),
+        const SizedBox(height: 80),
         const Text(
           'Learn Flutter the fun way!',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 24,
             color: Color.fromRGBO(252, 237, 217, 1),
           ),
         ),
         const SizedBox(height: 40),
-        ElevatedButton(
+        OutlinedButton.icon(
           onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
+          style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.white,
           ),
-          child: const Text('Start quiz'),
+          icon: const Icon(Icons.arrow_right_alt),
+          label: const Text('Start quiz'),
         )
       ],
     );

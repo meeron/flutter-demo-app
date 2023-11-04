@@ -8,16 +8,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Colors.deepPurple,
-              Colors.purple,
-            ],
-          ),
-        ),
+        decoration: _decoration,
         child: const Center(
           child: Start(),
         ),
@@ -25,3 +16,14 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+const BoxDecoration _decoration = BoxDecoration(
+  gradient: LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Colors.deepPurple,
+      Colors.purple,
+    ],
+  ),
+);
