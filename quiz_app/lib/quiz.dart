@@ -12,37 +12,32 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget? currentScreen;
-
-  @override
-  void initState() {
-    currentScreen = StartScreen(startQuiz);
-    super.initState();
-  }
+  var currentScreen = Screen.start;
 
   @override
   Widget build(BuildContext context) {
+    Widget screen = StartScreen(startQuiz);
+
+    if (currentScreen == Screen.questions) {
+      screen = const QuestionsScreen();
+    }
+
     return Scaffold(
       body: Container(
         decoration: _decoration,
-        child: Center(
-          child: currentScreen,
-        ),
+        child: Center(child: screen),
       ),
     );
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   void startQuiz() {
     setState(() {
-      currentScreen = const QuestionsScreen();
+      currentScreen = Screen.questions;
     });
   }
 }
+
+enum Screen { start, questions }
 
 const BoxDecoration _decoration = BoxDecoration(
   gradient: LinearGradient(
