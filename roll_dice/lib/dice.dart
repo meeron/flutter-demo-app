@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:roll_dice/home_text.dart';
 import 'dart:math';
 
+final random = Random();
+
 class Dice extends StatefulWidget {
   const Dice({super.key});
 
@@ -34,7 +36,7 @@ class _DiceState extends State<Dice> {
 
   rollDice() {
     setState(() {
-      number = Random().nextInt(6) + 1;
+      number = random.nextInt(6) + 1;
     });
   }
 }
