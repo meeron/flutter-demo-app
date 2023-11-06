@@ -19,17 +19,14 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(40),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          QuestionText(questions[questionsIndex].question),
-          const SizedBox(height: 30),
-          ...shuffleAndMapAnswers(),
-        ],
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        QuestionText(questions[questionsIndex].question),
+        const SizedBox(height: 30),
+        ...shuffleAndMapAnswers(),
+      ],
     );
   }
 
