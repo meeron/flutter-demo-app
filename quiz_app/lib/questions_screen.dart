@@ -4,7 +4,9 @@ import 'package:quiz_app/data.dart';
 import 'package:quiz_app/question_text.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onAnswer});
+
+  final void Function(String answer) onAnswer;
 
   @override
   State<QuestionsScreen> createState() {
@@ -14,7 +16,6 @@ class QuestionsScreen extends StatefulWidget {
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var questionsIndex = 0;
-  var answers = List<String>.filled(questions.length, '', growable: false);
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +34,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   }
 
   void answerQuestion(String answer) {
+    widget.onAnswer(answer);
     setState(() {
-      answers[questionsIndex] = answer;
-      if (questionsIndex >= questions.length - 1) {
-        return;
-      }
       questionsIndex++;
     });
   }
